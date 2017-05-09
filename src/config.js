@@ -31,11 +31,10 @@ const config = {
   wufoo: {
     id: 'TODO',
     action: 'TODO',
-    idstamp: 'TODO=',
+    idstamp: 'TODO',
     name: 'TODO',
     email: 'TODO',
     phone: 'TODO',
-    organization: 'TODO',
     group: 'TODO',
     message: 'TODO',
     honeypot: 'TODO',
