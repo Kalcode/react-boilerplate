@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.loading {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  z-index: 2;
+}
+
+.loaded {
+  composes: loading;
+  opacity: 0;
+}

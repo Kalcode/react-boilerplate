@@ -1,0 +1,16 @@
+.container {
+  clear: both;
+  overflow: hidden;
+}
+
+.button {
+  background-color: $blue;
+  border: none;
+  color: $white;
+  float: right;
+  font-family: $body;
+  margin-top: 40px;
+  outline: none;
+  padding: 0.75em 2em;
+  text-transform: uppercase;
+}
