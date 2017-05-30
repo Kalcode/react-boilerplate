@@ -10,4 +10,6 @@ function tryBundle() {
   }
 }
 
-tryBundle()
+if (process.env.NODE_ENV === 'production' || require('piping')({ hook: true })) {
+  tryBundle()
+}
