@@ -12,7 +12,7 @@ export default class ContentProvider extends PureComponent {
 
   get locale() {
     if (typeof window === 'undefined') return 'en'
-    else if (navigator.languages) return navigator.languages[0]
+    else if (navigator.languages && navigator.languages > 0) return navigator.languages[0]
     else if (navigator.userLanguage) return navigator.userLanguage
     else if (navigator.browserLanguage) return navigator.browserLanguage
     else if (navigator.language) return navigator.language

@@ -18,7 +18,7 @@ export default class PrefetchLink extends Component {
     onTouchStart: PropTypes.func,
   }
 
-  state = { checked: false }
+  checked = false
 
   @bind onMouseEnter(event) {
     this.prefetchRoute()
@@ -31,11 +31,11 @@ export default class PrefetchLink extends Component {
   }
 
   prefetchRoute() {
-    if (!this.state.checked) {
+    if (!this.checked) {
       const routes = createRoutes()
       const location = { pathname: this.props.to }
       const checked = true
-      match({ routes, location }, (e, r, pr) => this.setState({ checked }))
+      match({ routes, location }, (e, r, pr) => (this.checked = checked))
     }
   }
 
@@ -43,7 +43,8 @@ export default class PrefetchLink extends Component {
     if (typeof window === 'undefined') return true
     const parser = document.createElement('a')
     parser.href = this.props.to
-    return parser.host === window.location.host
+    if (!parser.host) parser.href = parser.href
+    return parser.hostname === window.location.hostname
   }
 
   internalLink() {
